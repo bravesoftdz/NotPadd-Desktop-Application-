@@ -1,0 +1,14 @@
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+   if     (Edit1.Text='1234')   then
+    begin
+       Button2.Enabled := true  ;
+       button1.Enabled := true  ;
+       Form1.Height :=   115    ;
+       Form1.Width := 346  ;
+    end
+          else
+         ShowMessage( '«·—ﬁ„ «·”—Ì Œ«ÿÏ ' );
+         Edit1.clear ;
+
+end;

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/02/07 17:16:11.000.796,=C:\Users\kikatokiro\Documents\Embarcadero\Studio\Projets\Unit1.pas</Transaction>
+    <Transaction>2019/02/13 19:49:06.000.837,=C:\Users\kikatokiro\Documents\Embarcadero\Studio\Projets\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 20:22:52.000.123,=C:\Users\kikatokiro\Documents\Embarcadero\Studio\Projets\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 20:23:16.000.312,C:\Users\kikatokiro\Desktop\Notpad Delphi\main_form.pas=C:\Users\kikatokiro\Documents\Embarcadero\Studio\Projets\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 20:23:16.000.312,C:\Users\kikatokiro\Desktop\Notpad Delphi\main_form.dfm=C:\Users\kikatokiro\Documents\Embarcadero\Studio\Projets\Unit1.dfm</Transaction>
+    <Transaction>2019/04/17 20:25:13.000.916,C:\Users\kikatokiro\Desktop\Notpad Delphi\Proji.dproj=C:\Users\kikatokiro\Documents\Embarcadero\Studio\Projets\Project1.dproj</Transaction>
+    <Transaction>2019/04/17 20:51:56.000.068,=C:\Users\kikatokiro\Desktop\Notpad Delphi\Unit2.pas</Transaction>
+    <Transaction>2019/04/17 20:52:25.000.390,C:\Users\kikatokiro\Desktop\Notpad Delphi\forunit2.dfm=C:\Users\kikatokiro\Desktop\Notpad Delphi\Unit2.dfm</Transaction>
+    <Transaction>2019/04/17 20:52:25.000.390,C:\Users\kikatokiro\Desktop\Notpad Delphi\forunit2.pas=C:\Users\kikatokiro\Desktop\Notpad Delphi\Unit2.pas</Transaction>
+    <Transaction>2019/05/02 00:43:24.000.696,=C:\Users\kikatokiro\Desktop\Notpad Delphi\Unit3.pas</Transaction>
+    <Transaction>2019/05/02 00:46:46.000.658,C:\Users\kikatokiro\Desktop\Notpad Delphi\Unit3.pas=C:\Users\kikatokiro\Desktop\Notpad Delphi\login_form.pas</Transaction>
+    <Transaction>2019/05/02 00:46:46.000.658,C:\Users\kikatokiro\Desktop\Notpad Delphi\Unit3.dfm=C:\Users\kikatokiro\Desktop\Notpad Delphi\login_form.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

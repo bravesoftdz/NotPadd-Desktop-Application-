@@ -1,0 +1,2 @@
+Label2.Caption := FormatDateTime('hh:mm:ss' ,Now) ;
+   Label1.Caption := FormatDateTime ('dd - mm - yyyy',Now) ;

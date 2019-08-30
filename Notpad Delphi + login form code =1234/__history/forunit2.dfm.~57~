@@ -1,0 +1,271 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 405
+  ClientWidth = 552
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  Visible = True
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 386
+    Width = 552
+    Height = 19
+    Panels = <>
+    ExplicitTop = 377
+    ExplicitWidth = 539
+  end
+  object RichEdit1: TRichEdit
+    Left = 0
+    Top = 48
+    Width = 552
+    Height = 338
+    Align = alClient
+    Font.Charset = ARABIC_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Lines.Strings = (
+      '')
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 1
+    Zoom = 100
+    ExplicitWidth = 539
+    ExplicitHeight = 329
+  end
+  object ActionToolBar1: TActionToolBar
+    Left = 0
+    Top = 0
+    Width = 552
+    Height = 48
+    ActionManager = ActionManager1
+    Caption = 'ActionToolBar1'
+    Color = clMenuBar
+    ColorMap.DisabledFontColor = 7171437
+    ColorMap.HighlightColor = clWhite
+    ColorMap.BtnSelectedFont = clBlack
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    Spacing = 0
+    ExplicitWidth = 539
+  end
+  object ActionManager1: TActionManager
+    ActionBars = <
+      item
+        Items = <
+          item
+            Action = FileSaveAs1
+            ImageIndex = 30
+          end
+          item
+            Action = EditDelete1
+            ImageIndex = 5
+            ShortCut = 46
+          end
+          item
+            Action = EditUndo1
+            ImageIndex = 3
+            ShortCut = 16474
+          end
+          item
+            Action = EditPaste1
+            ImageIndex = 2
+            ShortCut = 16470
+          end
+          item
+            Action = EditCopy1
+            ImageIndex = 1
+            ShortCut = 16451
+          end
+          item
+            Action = EditCut1
+            ImageIndex = 0
+            ShortCut = 16472
+          end
+          item
+            Action = FormatRichEditAlignLeft1
+            ImageIndex = 35
+          end
+          item
+            Action = FormatRichEditAlignCenter1
+            ImageIndex = 37
+          end
+          item
+            Action = FormatRichEditAlignRight1
+            ImageIndex = 36
+          end
+          item
+            Action = FormatRichEditBullets1
+            ImageIndex = 38
+          end
+          item
+            Action = FormatRichEditUnderline1
+            Caption = 'Soul&ign'#233
+            ImageIndex = 28
+            ShortCut = 16469
+          end
+          item
+            Action = FormatRichEditItalic1
+            ImageIndex = 29
+            ShortCut = 16457
+          end
+          item
+            Action = FormatRichEditBold1
+            Caption = 'G&ras'
+            ImageIndex = 31
+            ShortCut = 16450
+          end
+          item
+            Action = DialogColorSelect1
+          end
+          item
+            Action = DialogFontEdit1
+          end>
+        ActionBar = ActionToolBar1
+      end>
+    Left = 408
+    Top = 200
+    StyleName = 'Platform Default'
+    object DialogColorSelect1: TColorSelect
+      Category = 'Dialogue'
+      Caption = 'S'#233'lectionner la &couleur...'
+      Hint = 'S'#233'lection de la couleur'
+      BeforeExecute = DialogColorSelect1BeforeExecute
+      OnAccept = DialogColorSelect1Accept
+    end
+    object DialogFontEdit1: TFontEdit
+      Category = 'Dialogue'
+      Caption = 'S&'#233'lectionner la police...'
+      Dialog.Font.Charset = DEFAULT_CHARSET
+      Dialog.Font.Color = clWindowText
+      Dialog.Font.Height = -11
+      Dialog.Font.Name = 'Tahoma'
+      Dialog.Font.Style = []
+      Hint = 'S'#233'lectionner la police'
+      BeforeExecute = DialogFontEdit1BeforeExecute
+      OnAccept = DialogFontEdit1Accept
+    end
+    object EditCut1: TEditCut
+      Category = 'Edition'
+      Caption = 'Co&uper'
+      Hint = 'Couper|Coupe la s'#233'lection et la place dans le Presse-papiers'
+      ImageIndex = 0
+      ShortCut = 16472
+    end
+    object EditCopy1: TEditCopy
+      Category = 'Edition'
+      Caption = 'C&opier'
+      Hint = 'Copier|Copie la s'#233'lection et la place dans le Presse-papiers'
+      ImageIndex = 1
+      ShortCut = 16451
+    end
+    object EditPaste1: TEditPaste
+      Category = 'Edition'
+      Caption = 'Co&ller'
+      Hint = 'Coller|Ins'#232're le contenu du Presse-papiers'
+      ImageIndex = 2
+      ShortCut = 16470
+    end
+    object EditUndo1: TEditUndo
+      Category = 'Edition'
+      Caption = '&Annuler'
+      Hint = 'Annuler|Annuler la derni'#232're action'
+      ImageIndex = 3
+      ShortCut = 16474
+    end
+    object EditDelete1: TEditDelete
+      Category = 'Edition'
+      Caption = '&Supprimer'
+      Hint = 'Supprimer|Efface la s'#233'lection'
+      ImageIndex = 5
+      ShortCut = 46
+    end
+    object FileSaveAs1: TFileSaveAs
+      Category = 'Fichier'
+      Caption = 'Enre&gistrer sous...'
+      Dialog.DefaultExt = '*.txt'
+      Dialog.Filter = 'File Name (*.txt)|*.txt|File Name (*.*)|*.*'
+      Hint = 'Enregistrer sous|Enregistre le fichier actif sous un nouveau nom'
+      ImageIndex = 30
+      BeforeExecute = FileSaveAs1BeforeExecute
+      OnAccept = FileSaveAs1Accept
+    end
+    object FormatRichEditBold1: TRichEditBold
+      Category = 'Format'
+      AutoCheck = True
+      Caption = '&Gras'
+      Hint = 'Gras'
+      ImageIndex = 31
+      ShortCut = 16450
+    end
+    object FormatRichEditItalic1: TRichEditItalic
+      Category = 'Format'
+      AutoCheck = True
+      Caption = 'Itali&que'
+      Hint = 'Italique'
+      ImageIndex = 29
+      ShortCut = 16457
+    end
+    object FormatRichEditUnderline1: TRichEditUnderline
+      Category = 'Format'
+      AutoCheck = True
+      Caption = 'Sou&lign'#233
+      Hint = 'Soulign'#233
+      ImageIndex = 28
+      ShortCut = 16469
+    end
+    object FormatRichEditStrikeOut1: TRichEditStrikeOut
+      Category = 'Format'
+      AutoCheck = True
+      Caption = '&Barr'#233
+      Hint = 'Barr'#233
+      ImageIndex = 44
+    end
+    object FormatRichEditBullets1: TRichEditBullets
+      Category = 'Format'
+      AutoCheck = True
+      Caption = '&Puces'
+      Hint = 'Puces|Ins'#232're une puce sur la ligne en cours'
+      ImageIndex = 38
+    end
+    object FormatRichEditAlignLeft1: TRichEditAlignLeft
+      Category = 'Format'
+      AutoCheck = True
+      Caption = 'Aligner '#224' gauc&he'
+      Hint = 'Aligner '#224' gauche|Aligne le texte sur l'#39'indentation de gauche'
+      ImageIndex = 35
+    end
+    object FormatRichEditAlignRight1: TRichEditAlignRight
+      Category = 'Format'
+      AutoCheck = True
+      Caption = 'Aligner '#224' &droite'
+      Hint = 'Aligner '#224' droite|Aligne le texte sur l'#39'indentation de droite'
+      ImageIndex = 36
+    end
+    object FormatRichEditAlignCenter1: TRichEditAlignCenter
+      Category = 'Format'
+      AutoCheck = True
+      Caption = 'Ce&ntrer'
+      Hint = 'Centrer|Centrer le texte entre les marges'
+      ImageIndex = 37
+    end
+  end
+end

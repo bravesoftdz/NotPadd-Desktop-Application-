@@ -1,0 +1,24 @@
+«·ﬂÊœ «·Œ«’ »«·Õ›Ÿ 
+«·ÕœÀ 
+BeforeExecute
+****************************************************
+procedure TForm2.FileSaveAs1BeforeExecute(Sender: TObject);
+begin
+  if FileSaveAs1.Caption = 'Sans Titre.txt' then
+    FileSaveAs1.Dialog.FileName := Caption ;
+
+end;
+
+****************************************************
+
+«·ﬂÊœ «·Œ«’ »«·Õ›Ÿ 
+«·ÕœÀ 
+OnAccept
+****************************************************
+procedure TForm2.FileSaveAs1Accept(Sender: TObject);
+begin
+   RichEdit1.Lines.SaveToFile(FileSaveAs1.Dialog.FileName);
+   Caption := FileSaveAs1.Dialog.FileName ;
+end;
+
+****************************************************

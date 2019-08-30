@@ -1,0 +1,38 @@
+ 
+ﬂÊœ «·›Ê—„ «·«Ê· 
+FormShow
+*************************************************************
+procedure TForm1.FormShow(Sender: TObject);
+begin
+ FileNew1Execute(self);
+end;
+
+****************************************************************
+ﬂÊœ ’›Õ… ÃœÌœ…
+OnExecute «·ÕœÀ   
+«·›Ê—„ «·«Ê· 
+********************************************************************
+procedure TForm1.FileNew1Execute(Sender: TObject);
+begin
+  Application.CreateForm(TForm2 ,Form2 );
+  Form2.Caption := 'untitled.txt' ;
+end;
+
+*******************************************************************
+
+ﬂÊœ › Õ „·› „ÊÃÊœ „”»ﬁ«
+«·ÕœÀ : OnAccepte 
+«·›Ê—„ «·«Ê· 
+**********************************************************************
+procedure TForm1.FileOpen1Accept(Sender: TObject);
+begin
+ Application.CreateForm(TForm2 , Form2);
+   with  Form2   do
+    begin
+       Caption := FileOpen1.Dialog.FileName ;
+       RichEdit1.Lines.LoadFromFile(FileOpen1.Dialog.FileName);
+       RichEdit1.Modified := false ;
+    end;
+end;
+
+**********************************************************************

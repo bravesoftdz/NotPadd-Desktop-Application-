@@ -1,0 +1,129 @@
+unit forunit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.PlatformDefaultStyleActnCtrls,
+  System.Actions, Vcl.ActnList, Vcl.ActnMan, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.ToolWin, Vcl.ActnCtrls, Vcl.ExtActns, Vcl.StdActns, System.ImageList,
+  Vcl.ImgList;
+
+type
+  TForm2 = class(TForm)
+    StatusBar1: TStatusBar;
+    RichEdit1: TRichEdit;
+    ActionManager1: TActionManager;
+    DialogColorSelect1: TColorSelect;
+    DialogFontEdit1: TFontEdit;
+    EditCut1: TEditCut;
+    EditCopy1: TEditCopy;
+    EditPaste1: TEditPaste;
+    EditUndo1: TEditUndo;
+    EditDelete1: TEditDelete;
+    FileSaveAs1: TFileSaveAs;
+    FormatRichEditBold1: TRichEditBold;
+    FormatRichEditItalic1: TRichEditItalic;
+    FormatRichEditUnderline1: TRichEditUnderline;
+    FormatRichEditStrikeOut1: TRichEditStrikeOut;
+    FormatRichEditBullets1: TRichEditBullets;
+    FormatRichEditAlignLeft1: TRichEditAlignLeft;
+    FormatRichEditAlignRight1: TRichEditAlignRight;
+    FormatRichEditAlignCenter1: TRichEditAlignCenter;
+    ActionToolBar1: TActionToolBar;
+    procedure DialogColorSelect1BeforeExecute(Sender: TObject);
+    procedure DialogColorSelect1Accept(Sender: TObject);
+    procedure DialogFontEdit1BeforeExecute(Sender: TObject);
+    procedure DialogFontEdit1Accept(Sender: TObject);
+    procedure FileSaveAs1BeforeExecute(Sender: TObject);
+    procedure FileSaveAs1Accept(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+
+
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.DialogColorSelect1Accept(Sender: TObject);
+begin
+    RichEdit1.SelAttributes.Color := DialogColorSelect1.Dialog.Color ;
+end;
+
+procedure TForm2.DialogColorSelect1BeforeExecute(Sender: TObject);
+begin
+    DialogColorSelect1.Dialog.Color := RichEdit1.SelAttributes.Color ;
+end;
+
+
+procedure TForm2.DialogFontEdit1Accept(Sender: TObject);
+begin
+    with RichEdit1 do
+      begin
+       SelAttributes.Name := DialogFontEdit1.Dialog.Font.Name ;
+       SelAttributes.Color := DialogFontEdit1.Dialog.Font.Color ;
+       SelAttributes.Style := DialogFontEdit1.Dialog.Font.Style ;
+       SelAttributes.Size := DialogFontEdit1.Dialog.Font.Size ;
+      end;
+end;
+
+procedure TForm2.DialogFontEdit1BeforeExecute(Sender: TObject);
+begin
+  with  DialogFontEdit1 do
+     begin
+       Font.Name:= RichEdit1.SelAttributes.Name ;
+       Font.Color:= RichEdit1.SelAttributes.Color;
+       Font.Style:= RichEdit1.SelAttributes.Style ;
+       Font.Size:= RichEdit1.SelAttributes.Size ;
+     end;
+end;
+
+procedure TForm2.FileSaveAs1Accept(Sender: TObject);
+begin
+   RichEdit1.Lines.SaveToFile(FileSaveAs1.Dialog.FileName);
+   Caption := FileSaveAs1.Dialog.FileName ;
+end;
+
+procedure TForm2.FileSaveAs1BeforeExecute(Sender: TObject);
+begin
+  if FileSaveAs1.Caption = 'Sans Titre.txt' then
+    FileSaveAs1.Dialog.FileName := Caption ;
+
+end;
+
+
+
+
+
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+   Action := caFree ;
+end;
+
+procedure TForm2.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  if RichEdit1.Modified then
+     begin
+         if Caption = 'Sans Titre.txt' then
+           FileSaveAs1.Execute
+          else
+             case MessageDlg ('voulez vous enregistrer les modifications ', mtConfirmation, mbYesNoCancel, 0)  of
+               mrYes :  RichEdit1.Lines.SaveToFile(Caption);
+               mrNo : CanClose := True ;
+               mrCancel : CanClose := false ;
+
+             end;
+
+     end;
+end;
+
+end.

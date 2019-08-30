@@ -1,0 +1,29 @@
+ﬂÊœ «·Œÿ «·ÕœÀ «·Œ«’ » 
+BeforeExecute
+*****************************************************************************************
+procedure TForm2.DialogFontEdit1BeforeExecute(Sender: TObject);
+begin
+  with  DialogFontEdit1 do
+     begin
+       Font.Name:= RichEdit1.SelAttributes.Name ;
+       Font.Color:= RichEdit1.SelAttributes.Color;
+       Font.Style:= RichEdit1.SelAttributes.Style ;
+       Font.Size:= RichEdit1.SelAttributes.Size ;
+     end;
+end;
+********************************************************************************************
+
+ﬂÊœ «·Œÿ «·ÕœÀ «·Œ«’ » 
+OnAccept
+*****************************************************************************************
+procedure TForm2.DialogFontEdit1Accept(Sender: TObject);
+begin
+    with RichEdit1 do
+      begin
+       SelAttributes.Name := DialogFontEdit1.Dialog.Font.Name ;
+       SelAttributes.Color := DialogFontEdit1.Dialog.Font.Color ;
+       SelAttributes.Style := DialogFontEdit1.Dialog.Font.Style ;
+       SelAttributes.Size := DialogFontEdit1.Dialog.Font.Size ;
+      end;
+end;
+********************************************************************************************

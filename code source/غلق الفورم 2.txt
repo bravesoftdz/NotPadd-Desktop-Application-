@@ -1,0 +1,29 @@
+€·ﬁ +  Õ—Ì— «·»—‰«„Ã „‰ «·–«ﬂ—… 
+***********************************************************************************************************
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+   Action := caFree ;
+end;
+
+***********************************************************************************************************
+
+ﬁ»· «·€·ﬁ «· √ﬂœ „‰ ⁄„·Ì… «·Õ›Ÿ
+***********************************************************************************************************
+
+procedure TForm2.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  if RichEdit1.Modified then
+     begin
+         if Caption = 'Sans Titre.txt' then
+           FileSaveAs1.Execute
+          else
+             case MessageDlg ('voulez vous enregistrer les modifications ', mtConfirmation, mbYesNoCancel, 0)  of
+               mrYes :  RichEdit1.Lines.SaveToFile(Caption);
+               mrNo : CanClose := True ;
+               mrCancel : CanClose := false ;
+
+             end;
+
+     end;
+end;
+***********************************************************************************************************

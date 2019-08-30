@@ -1,0 +1,17 @@
+ﬂÊœ «·«·Ê«‰ «·ÕœÀ «·Œ«’ » 
+BeforeExecute
+************************************************************************************************
+procedure TForm2.DialogColorSelect1BeforeExecute(Sender: TObject);
+begin
+    DialogColorSelect1.Dialog.Color := RichEdit1.SelAttributes.Color ;
+end;
+************************************************************************************************
+ﬂÊœ «·«·Ê«‰ «·ÕœÀ «·Œ«’ » 
+OnAccept
+************************************************************************************************
+procedure TForm2.DialogColorSelect1Accept(Sender: TObject);
+begin
+    RichEdit1.SelAttributes.Color := DialogColorSelect1.Dialog.Color ;
+end;
+
+************************************************************************************************

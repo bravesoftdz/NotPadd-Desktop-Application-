@@ -1,0 +1,68 @@
+unit main_form;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ActnCtrls, Vcl.ToolWin, Vcl.ActnMan,
+  Vcl.ActnMenus, Vcl.StdActns, System.Actions, Vcl.ActnList,
+  Vcl.PlatformDefaultStyleActnCtrls, System.ImageList, Vcl.ImgList, Vcl.ComCtrls;
+
+type
+  TForm1 = class(TForm)
+    StatusBar1: TStatusBar;
+    ImageList1: TImageList;
+    ActionManager1: TActionManager;
+    FileNew1: TAction;
+    WindowCascade1: TWindowCascade;
+    WindowTileHorizontal1: TWindowTileHorizontal;
+    WindowTileVertical1: TWindowTileVertical;
+    FileOpen1: TFileOpen;
+    FileExit1: TFileExit;
+    ActionMainMenuBar1: TActionMainMenuBar;
+    ActionToolBar1: TActionToolBar;
+    procedure FileNew1Execute(Sender: TObject);
+    procedure FileOpen1Accept(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+
+  private
+    { Déclarations privées }
+  public
+    { Déclarations publiques }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses forunit2, login_form;
+
+
+
+procedure TForm1.FileNew1Execute(Sender: TObject);
+begin
+  Application.CreateForm(TForm2 ,Form2 );
+  Form2.Caption := 'Sans Titre.txt' ;
+end;
+
+procedure TForm1.FileOpen1Accept(Sender: TObject);
+begin
+ Application.CreateForm(TForm2 , Form2);
+   with  Form2   do
+    begin
+       Caption := FileOpen1.Dialog.FileName ;
+       RichEdit1.Lines.LoadFromFile(FileOpen1.Dialog.FileName);
+       RichEdit1.Modified := false ;
+    end;
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+  Form2.FormStyle = FormStyle.fsNormal;
+  FileNew1Execute(self);
+end;
+
+end.
